@@ -29,4 +29,12 @@ QUnit.module("Тестируем функцию sortByFrequency", function() {
     assert.deepEqual(sortByFrequency([5, 2, 8, 1, 9]), [1, 2, 5, 8, 9]);
 
     });
+    QUnit.test("Уникальный тест: большие числа и границ", function(assert) {
+    assert.deepEqual(
+        sortByFrequency([1000, 1000, 999999, 999999, 999999, 0, 0, 0, 0]),
+        [0, 0, 0, 0, 999999, 999999, 999999, 1000, 1000],
+        "Большие числа корректно сравниваются и сортируются"
+    );
 });
+});
+
