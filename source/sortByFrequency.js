@@ -20,7 +20,6 @@ const sortByFrequency = function(arr) {
         const freqA = frequency[a];
         const freqB = frequency[b];
         
-        
         if (freqB !== freqA) {
             return freqB - freqA;
         }
