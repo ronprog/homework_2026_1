@@ -6,6 +6,7 @@
  * // returns [1, 1, 1, 3, 3, 2, 2]
  * sortByFrequency([1, 2, 3, 3, 2, 1, 1])
  */
+"use strict";
 const sortByFrequency = function(arr) {
     // 1. Подсчитываем частоту каждого числа
     const frequency = {};
