@@ -3,7 +3,7 @@
  * @param {Array<number>} arr - исходный массив чисел
  * @returns {Array<number>} новый массив, отсортированный по частоте
  * @example
- * // returns [1, 1, 1, 3, 3, 2, 2]
+ * // returns [1, 1, 1, 2, 2, 3, 3]
  * sortByFrequency([1, 2, 3, 3, 2, 1, 1])
  */
 "use strict";
