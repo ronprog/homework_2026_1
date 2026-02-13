@@ -38,14 +38,16 @@ const sortByFrequency = function(arr) {
     
     const result = [];
     
-    for (let i = 0; i < sortedNumbers.length; i++) {
-        const num = Number(sortedNumbers[i]);
-        const count = frequency[sortedNumbers[i]];
-        
-        for (let j = 0; j < count; j++) {
-            result.push(num);
-        }
+    const result = sortedNumbers.reduce((acc, numStr) => {
+    const num = Number(numStr);
+    const count = frequency[numStr];
+    
+    for (let j = 0; j < count; j++) {
+        acc.push(num);
     }
+    
+    return acc;
+}, []);
     
     return result;
 };
