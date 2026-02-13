@@ -50,6 +50,3 @@ QUnit.module("Тестируем функцию sortByFrequency", function() {
     assert.deepEqual(result, [2, 2, 2, 2, 4, 4, 4, 6, 6], "Результат отсортирован верно");
 });
 });
-
-
-
