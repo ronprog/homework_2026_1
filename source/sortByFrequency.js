@@ -11,10 +11,10 @@ const sortByFrequency = function(arr) {
     // 1. Подсчитываем частоту каждого числа
     const frequency = {};
     
-    for (let i = 0; i < arr.length; i++) {
-        const num = arr[i];
-        frequency[num] = (frequency[num] || 0) + 1;
-    }
+    const frequency = arr.reduce((acc, num) => {
+    acc[num] = (acc[num] || 0) + 1;
+    return acc;  
+    }, {});
     
     // 2. Сортируем числа: сначала по частоте (убывание), потом по значению (возрастание)
     const sortedNumbers = Object.keys(frequency).sort((a, b) => {
