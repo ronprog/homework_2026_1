@@ -8,14 +8,14 @@
  * sortByFrequency([1, 2, 3, 3, 2, 1, 1])
  */
 
-const sortByFrequency = function(arr) {
+const sortByFrequency = function (arr) {
     // 1. Подсчитываем частоту каждого числа
 
     const frequency = arr.reduce((acc, num) => {
-    acc[num] = (acc[num] || 0) + 1;
-    return acc;  
+        acc[num] = (acc[num] || 0) + 1;
+        return acc;
     }, {});
-    
+
     // 2. Сортируем числа: сначала по частоте (убывание), потом по значению (возрастание)
     const sortedNumbers = Object.keys(frequency).sort((a, b) => {
         /**
@@ -26,25 +26,25 @@ const sortByFrequency = function(arr) {
          */
         const freqA = frequency[a];
         const freqB = frequency[b];
-        
+
         if (freqB !== freqA) {
             return freqB - freqA;
         }
-        
-       
+
+
         return Number(a) - Number(b);
     });
-    
+
     const result = sortedNumbers.reduce((acc, numStr) => {
-    const num = Number(numStr);
-    const count = frequency[numStr];
-    
-    for (let j = 0; j < count; j++) {
-        acc.push(num);
-    }
-    
-    return acc;
-}, []);
-    
+        const num = Number(numStr);
+        const count = frequency[numStr];
+
+        for (let j = 0; j < count; j++) {
+            acc.push(num);
+        }
+
+        return acc;
+    }, []);
+
     return result;
 };
