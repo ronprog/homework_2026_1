@@ -36,5 +36,20 @@ QUnit.module("Тестируем функцию sortByFrequency", function() {
         "Большие числа корректно сравниваются и сортируются"
     );
 });
+    QUnit.test("Функция не изменяет исходный массив (не in-place)", function(assert) {
+
+
+    const original = [4, 6, 2, 6, 4, 4, 2, 2, 2];
+    const originalCopy = [...original]; 
+    
+    const result = sortByFrequency(original);
+
+    assert.deepEqual(original, originalCopy, "Исходный массив остался без изменений");
+
+    assert.notStrictEqual(result, original, "Функция вернула новый массив, а не изменила старый");
+
+    assert.deepEqual(result, [2, 2, 2, 2, 4, 4, 4, 6, 6], "Результат отсортирован верно");
 });
+});
+
 
