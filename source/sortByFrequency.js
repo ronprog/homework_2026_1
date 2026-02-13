@@ -18,6 +18,12 @@ const sortByFrequency = function(arr) {
     
     // 2. Сортируем числа: сначала по частоте (убывание), потом по значению (возрастание)
     const sortedNumbers = Object.keys(frequency).sort((a, b) => {
+        /**
+         * Функция сравнения для сортировки по частоте и значению
+         * @param {string} a - первый ключ для сравнения
+         * @param {string} b - второй ключ для сравнения
+         * @returns {number} результат сравнения
+         */
         const freqA = frequency[a];
         const freqB = frequency[b];
         
