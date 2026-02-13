@@ -35,9 +35,6 @@ const sortByFrequency = function(arr) {
         return Number(a) - Number(b);
     });
     
-    
-
-    
     const result = sortedNumbers.reduce((acc, numStr) => {
     const num = Number(numStr);
     const count = frequency[numStr];
