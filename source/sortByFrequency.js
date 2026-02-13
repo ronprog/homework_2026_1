@@ -3,14 +3,13 @@
  * @param {Array<number>} arr - исходный массив чисел
  * @returns {Array<number>} новый массив, отсортированный по частоте
  * @example
- * // returns [1, 1, 1, 2, 2, 3, 3]
+ * // returns [1, 1, 1, 3, 3, 2, 2]
  * sortByFrequency([1, 2, 3, 3, 2, 1, 1])
  */
 "use strict";
 const sortByFrequency = function(arr) {
     // 1. Подсчитываем частоту каждого числа
-    const frequency = {};
-    
+
     const frequency = arr.reduce((acc, num) => {
     acc[num] = (acc[num] || 0) + 1;
     return acc;  
@@ -36,7 +35,7 @@ const sortByFrequency = function(arr) {
     });
     
     
-    const result = [];
+
     
     const result = sortedNumbers.reduce((acc, numStr) => {
     const num = Number(numStr);
