@@ -10,27 +10,26 @@
 
 const sortByFrequency = function (arr) {
     // 1. Подсчитываем частоту каждого числа
-
     const frequency = arr.reduce((acc, num) => {
         acc[num] = (acc[num] || 0) + 1;
         return acc;
     }, {});
 
     // 2. Сортируем числа: сначала по частоте (убывание), потом по значению (возрастание)
-    const sortedNumbers = Object.keys(frequency).sort((a, b) => {
+    
     /**
      * Функция сравнения для сортировки по частоте и значению
      * @param {string} a - первый ключ для сравнения (строковое представление числа)
      * @param {string} b - второй ключ для сравнения (строковое представление числа)
      * @returns {number} результат сравнения
      */
+    const sortedNumbers = Object.keys(frequency).sort((a, b) => {
         const freqA = frequency[a];
         const freqB = frequency[b];
 
         if (freqB !== freqA) {
             return freqB - freqA;
         }
-
 
         return Number(a) - Number(b);
     });
