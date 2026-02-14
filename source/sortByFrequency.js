@@ -7,7 +7,6 @@
  * // returns [1, 1, 1, 2, 2, 3, 3]
  * sortByFrequency([1, 2, 3, 3, 2, 1, 1])
  */
-
 const sortByFrequency = function (arr) {
  
     const frequency = arr.reduce((acc, num) => {
